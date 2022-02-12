@@ -1,0 +1,20 @@
+import React from "react";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding: 30px 50px 30px 60px;
+  background-color: ${props => props.theme.pallete.primary.main};
+`;
+interface IContainerProps {
+  children: React.ReactChild | React.ReactChild[];
+}
+
+const Container = ({ children }: IContainerProps) => {
+  return <StyledContainer>{children}</StyledContainer>;
+};
+export default Container;
