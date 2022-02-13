@@ -8,11 +8,12 @@
   flex-wrap: wrap;
 }
 .bottomSection {
-  padding: 10px 20px;
+  padding: 10px 30px;
 }
 .approvedImages {
-  padding: 10px 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .caption {
-  padding: 10px 20px;
+  padding-left: 30px;
 }

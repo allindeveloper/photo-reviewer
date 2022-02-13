@@ -1,7 +1,7 @@
+import { AxiosError, AxiosResponse } from "axios";
 import { useState } from "react";
 import { getRandomImageApiService } from "services/images";
 import { IImage } from "types/image";
-
 const useGetRandomImage = () => {
   const [randomImage, setrandomImage] = useState<IImage>();
   const [loading, setloading] = useState(false);
@@ -9,10 +9,11 @@ const useGetRandomImage = () => {
   const getRandomImage = () => {
     setloading(true);
     getRandomImageApiService()
-      .then(() => {
+      .then((res:AxiosResponse<IImage>) => {
         setloading(false);
+        setrandomImage(res.data)
       })
-      .catch(() => {
+      .catch((err:AxiosError) => {
         setloading(false);
       });
   };

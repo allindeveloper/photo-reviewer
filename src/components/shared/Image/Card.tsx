@@ -5,7 +5,7 @@ import styled, { useTheme } from "styled-components";
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.pallete.common.offwhite};
-  height: 90px;
+  height: 70px;
   border-radius: 4px;
   text-align: center;
   display: flex;
@@ -21,7 +21,7 @@ export function Card({ title, itemId }: { title: string; itemId: string }) {
       role="button"
       style={{
         margin: "0 10px",
-        width: "160px",
+        width: "120px",
         userSelect: "none",
       }}
       tabIndex={0}

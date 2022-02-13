@@ -1,21 +1,16 @@
 import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { IImage } from "../../../types/image";
 import { LeftArrow, RightArrow } from "./Arrows";
 import { Card } from "./Card";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
-const elemPrefix = "test";
-const getId = (index: number) => `${elemPrefix}${index}`;
+export interface IApprovedImages {
+  approvedImages: IImage[];
+}
 
-const getItems = () =>
-  Array(20)
-    .fill(0)
-    .map((_, ind) => ({ id: getId(ind) }));
-
-function App() {
-  const [items] = React.useState(getItems);
-
+const ApprovedImages = ({ approvedImages }: IApprovedImages) => {
   const onWheel = (apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void => {
     const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
 
@@ -35,7 +30,7 @@ function App() {
       <div>
         <div>
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} onWheel={onWheel}>
-            {items.map(({ id }) => (
+            {approvedImages.map(({ id }) => (
               <Card title={id} itemId={id} key={id} />
             ))}
           </ScrollMenu>
@@ -43,5 +38,5 @@ function App() {
       </div>
     </>
   );
-}
-export default App;
+};
+export default ApprovedImages;

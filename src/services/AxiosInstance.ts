@@ -3,10 +3,11 @@ import { getBaseUrl } from "../utils/globalUtils";
 
 
 const AxiosInstance = axios.create({
-  baseURL: `${getBaseUrl()}?client=id=${process.env.REACT_APP_UNSPLASH_CLIENT_ID}`,
+  baseURL: getBaseUrl()
 });
 AxiosInstance.interceptors.request.use(
   async (config: AxiosRequestConfig) => {
+    config.headers["Authorization"] = `Client-ID ${process&&process.env.REACT_APP_UNSPLASH_CLIENT_ID}`
     return config;
   },
 

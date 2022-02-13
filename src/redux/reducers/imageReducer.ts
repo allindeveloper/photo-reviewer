@@ -1,17 +1,17 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { IImage } from '../../types/image';
 
-export const remove = createAction<IImage, 'remove'>('remove')
-export const add = createAction<IImage, 'add'>('add')
+export const removeImage = createAction<IImage, 'removeImage'>('removeImage')
+export const addImage = createAction<IImage, 'addImage'>('addImage')
 
 const imageReducer = createReducer<IImage[]>([], (builder) => {
     builder
-      .addCase(add, (state, action) => {
+      .addCase(addImage, (state, action) => {
         state.push(action.payload)
       })
       builder
-      .addCase(remove, (state, action) => {
-        // state.filter((todo, i) => i !== action.payload.index)
+      .addCase(removeImage, (state, action) => {
+        state.filter((imageItem, i) => imageItem.id !== action.payload.id)
       })
   })
 

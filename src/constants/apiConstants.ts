@@ -1,4 +1,4 @@
 export const api = {
-  PHOTOS:"Photos",
-  RANDOM:"Random",
+  PHOTOS:"photos",
+  RANDOM:"random",
 };
