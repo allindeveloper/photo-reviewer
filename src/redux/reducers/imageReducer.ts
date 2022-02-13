@@ -7,7 +7,7 @@ interface ImageReducerState {
   rejectedImages: IImage[];
   approvedImages: IImage[];
 }
-const initState: ImageReducerState = {
+export const initState: ImageReducerState = {
   rejectedImages: [],
   approvedImages: [],
 };

@@ -28,29 +28,30 @@ const StyledImagePreview = styled.div`
 interface IImagePreviewProps {
   getRandomImage: () => void;
   imageUrl?: string;
-  description: string;
+  description?: string;
   isLoading?: boolean;
+  testId?: string;
 }
 
-const ImagePreview = ({ isLoading, getRandomImage, imageUrl, description }: IImagePreviewProps) => {
+const ImagePreview = ({ testId, isLoading, getRandomImage, imageUrl, description }: IImagePreviewProps) => {
   const appTheme = useTheme();
 
   return (
-    <StyledImagePreview onClick={getRandomImage}>
+    <StyledImagePreview data-testid={testId} onClick={getRandomImage}>
       {isLoading && (
-        <div>
+        <div data-testid={"imagePreloader"}>
           <PreLoader />
         </div>
       )}
       {!isLoading && imageUrl && imageUrl && (
         <div>
-          <img src={imageUrl} alt={description} />
+          <img data-testid={"image"} src={imageUrl} alt={description} />
         </div>
       )}
 
       {!isLoading && !imageUrl && (
         <div>
-          <FontAwesomeIcon size="8x" icon={faPlus} color={appTheme.pallete.common.normalGrey} />
+          <FontAwesomeIcon data-testid="imagePlus" size="8x" icon={faPlus} color={appTheme.pallete.common.normalGrey} />
         </div>
       )}
     </StyledImagePreview>

@@ -37,7 +37,6 @@ const Welcome = () => {
       }
     }
   };
-  console.log("rejectImages", images.rejectedImages);
 
   const handleApprove = () => {
     if (randomImage?.urls?.regular) {
@@ -78,23 +77,28 @@ const Welcome = () => {
               description={randomImage.description}
               getRandomImage={handleGetRandomImage}
               isLoading={loading}
+              testId={"getRandomImage"}
             />
             <hr />
             <Space top={40} />
 
-            <div className={styles.welcomeEmpty}>
-              <label>
-                Click on the <PlusIcon size="1x" /> in order to get image recommendations
-              </label>
-            </div>
-            <div className={styles.welcomeActions}>
-              <div>
-                <CustomButton onClick={handleCancel} state={"cancel"} />
+            {!randomImage?.urls?.regular && (
+              <div className={styles.welcomeEmpty}>
+                <label data-testid="welcomeEmpty">
+                  Click on the <PlusIcon size="1x" /> in order to get image recommendations
+                </label>
               </div>
-              <div>
-                <CustomButton onClick={handleApprove} state={"okay"} />
+            )}
+            {randomImage?.urls?.regular && (
+              <div className={styles.welcomeActions}>
+                <div>
+                  <CustomButton testId="rejectButton" onClick={handleCancel} state={"cancel"} />
+                </div>
+                <div>
+                  <CustomButton testId="approveImage" onClick={handleApprove} state={"okay"} />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </ImageContainer>
       </Container>

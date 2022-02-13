@@ -7,6 +7,7 @@ export interface ICustomButtonProps {
   state?: "cancel" | "okay";
   disabled?: boolean;
   onClick?: () => void;
+  testId?: string;
 }
 const StyledCustomButton = styled.div<ICustomButtonProps>`
   background-size: contain;
@@ -27,9 +28,9 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
     width: 10%;
   }
 `;
-export const CustomButton: React.FC<ICustomButtonProps> = ({ state = "cancel", disabled, onClick }) => {
+export const CustomButton: React.FC<ICustomButtonProps> = ({ testId, state = "cancel", disabled, onClick }) => {
   return (
-    <StyledCustomButton state={state} disabled={disabled} onClick={onClick}>
+    <StyledCustomButton data-testid={testId} state={state} disabled={disabled} onClick={onClick}>
       {state === "cancel" ? <CustomIcon icon={faTimes} size="2x" /> : <CustomIcon size="2x" icon={faCheck} />}
     </StyledCustomButton>
   );

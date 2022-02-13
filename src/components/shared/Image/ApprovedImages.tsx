@@ -30,15 +30,17 @@ const ApprovedImages = ({ approvedImages }: IApprovedImages) => {
       <div>
         <div>
           {approvedImages.length === 0 && <Card imageUrl={""} title={""} itemId={""} />}
-          <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} onWheel={onWheel}>
-            {approvedImages.length > 0 ? (
-              approvedImages.map((item, index) => (
-                <Card imageUrl={item.urls.regular} title={item.id} itemId={item.id} key={item.id + index} />
-              ))
-            ) : (
-              <div></div>
-            )}
-          </ScrollMenu>
+          {approvedImages.length > 0 && (
+            <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} onWheel={onWheel}>
+              {approvedImages.length > 0 ? (
+                approvedImages.map((item, index) => (
+                  <Card imageUrl={item.urls.regular} title={item.id} itemId={item.id} key={item.id + index} />
+                ))
+              ) : (
+                <div></div>
+              )}
+            </ScrollMenu>
+          )}
         </div>
       </div>
     </>
