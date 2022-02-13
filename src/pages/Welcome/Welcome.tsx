@@ -23,13 +23,21 @@ const Welcome = () => {
   const images = useAppSelector(state => state.imageReducer);
 
   const { getRandomImage, loading, randomImage } = useGetRandomImage();
-  const imageExist = images.rejectedImages.some(
+  const imageExist = images.approvedImages.some(
+    item => item.id === randomImage.id && item.urls.regular === randomImage.urls.regular,
+  );
+  const rejectedimageExist = images.rejectedImages.some(
     item => item.id === randomImage.id && item.urls.regular === randomImage.urls.regular,
   );
   const handleCancel = () => {
-    dispatch(rejectImage(randomImage));
-    getRandomImage();
+    if (randomImage?.urls?.regular) {
+      if (!rejectedimageExist) {
+        dispatch(rejectImage(randomImage));
+        getRandomImage();
+      }
+    }
   };
+  console.log("rejectImages", images.rejectedImages);
 
   const handleApprove = () => {
     if (randomImage?.urls?.regular) {

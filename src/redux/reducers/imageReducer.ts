@@ -19,7 +19,7 @@ const imageReducer = createReducer<ImageReducerState>(initState, builder => {
     state.approvedImages.push(action.payload);
   });
   builder.addCase(rejectImage, (state, action) => {
-    state.rejectedImages.filter((imageItem) => imageItem.id !== action.payload.id);
+    state.rejectedImages.push(action.payload);
   });
 });
 
