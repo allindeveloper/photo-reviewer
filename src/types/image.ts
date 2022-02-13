@@ -6,6 +6,7 @@ export interface IImage {
         small: string;
         thumb: string;
     };
+    description: string;
     id:string;
 }
 

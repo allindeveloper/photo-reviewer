@@ -12,6 +12,7 @@ const useGetRandomImage = () => {
       small: "",
       thumb: "",
     },
+    description: "",
     id: "",
   });
   const [loading, setloading] = useState(false);
@@ -31,6 +32,7 @@ const useGetRandomImage = () => {
           setrandomImage({
             id: res.data.id,
             urls: res.data.urls,
+            description:res.data.description
           });
         }
       })

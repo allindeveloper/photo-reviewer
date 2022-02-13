@@ -12,4 +12,4 @@ export const CustomIcon: React.FC<CustomIconProps> = ({ size = "4x", color, icon
   return <FontAwesomeIcon color={iconColor} size={size} icon={icon} />;
 };
 
-export default CustomIconProps;
+export default CustomIcon;

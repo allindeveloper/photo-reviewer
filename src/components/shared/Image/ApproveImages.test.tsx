@@ -24,6 +24,8 @@ it("Approved Images correctly when there is a single approved Image", () => {
   const approvedImages: IApprovedImage[] = [
     {
       id: "JmFldiNGY18",
+      description: "First Image",
+
       urls: {
         raw:
           "https://images.unsplash.com/photo-1644585587551-85377778d375?ixid=MnwzMDA4MzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDQ3NTUzMjM\u0026ixlib=rb-1.2.1",
@@ -52,6 +54,7 @@ it("renders correctly when there are multiple items", () => {
   const approvedImages: IApprovedImage[] = [
     {
       id: "JmFldiNGY18",
+      description: "First Image",
       urls: {
         raw:
           "https://images.unsplash.com/photo-1644585587551-85377778d375?ixid=MnwzMDA4MzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDQ3NTUzMjM\u0026ixlib=rb-1.2.1",
@@ -67,6 +70,8 @@ it("renders correctly when there are multiple items", () => {
     },
     {
       id: "sNS-uuP01hE",
+      description: "Second Image",
+
       urls: {
         raw:
           "https://images.unsplash.com/photo-1644520755723-868f336428c6?ixid=MnwzMDA4MzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDQ3NTU1MzQ\u0026ixlib=rb-1.2.1",

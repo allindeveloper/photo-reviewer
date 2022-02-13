@@ -28,10 +28,11 @@ const StyledImagePreview = styled.div`
 interface IImagePreviewProps {
   getRandomImage: () => void;
   imageUrl?: string;
+  description: string;
   isLoading?: boolean;
 }
 
-const ImagePreview = ({ isLoading, getRandomImage, imageUrl }: IImagePreviewProps) => {
+const ImagePreview = ({ isLoading, getRandomImage, imageUrl, description }: IImagePreviewProps) => {
   const appTheme = useTheme();
 
   return (
@@ -43,7 +44,7 @@ const ImagePreview = ({ isLoading, getRandomImage, imageUrl }: IImagePreviewProp
       )}
       {!isLoading && imageUrl && imageUrl && (
         <div>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt={description} />
         </div>
       )}
 

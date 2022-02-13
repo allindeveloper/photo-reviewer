@@ -23,14 +23,18 @@ const Welcome = () => {
   const images = useAppSelector(state => state.imageReducer);
 
   const { getRandomImage, loading, randomImage } = useGetRandomImage();
-
+  const imageExist = images.approvedImages.some(
+    item => item.id === randomImage.id && item.urls.regular === randomImage.urls.regular,
+  );
   const handleCancel = () => {
     getRandomImage();
   };
 
   const handleApprove = () => {
     if (randomImage?.urls?.regular) {
-      dispatch(approveImage(randomImage));
+      if (!imageExist) {
+        dispatch(approveImage(randomImage));
+      }
     }
   };
 
@@ -62,6 +66,7 @@ const Welcome = () => {
             <hr />
             <ImagePreview
               imageUrl={randomImage.urls.regular}
+              description={randomImage.description}
               getRandomImage={handleGetRandomImage}
               isLoading={loading}
             />

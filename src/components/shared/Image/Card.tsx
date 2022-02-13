@@ -1,7 +1,8 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled, { useTheme } from "styled-components";
+import CustomIcon from "../../ui/Icons/CustomIcon";
 
 interface CardProps {
   imageUrl?: string;
@@ -21,7 +22,13 @@ const StyledCard = styled.div<CardProps>`
   justify-content: center;
   background: url(${props => props.imageUrl}) ${props => props.imageUrl && "rgb(59 85 230)"};
   background-size: cover;
+  position: relative;
   border: 1px solid ${props => props.theme.pallete.common.lightGrey};
+`;
+const StyledCardChecked = styled.div`
+  position: absolute;
+  top: 0;
+  right: 5px;
 `;
 export const Card = ({ title, itemId, imageUrl }: CardProps) => {
   const appTheme = useTheme();
@@ -40,6 +47,11 @@ export const Card = ({ title, itemId, imageUrl }: CardProps) => {
       tabIndex={0}
       className="card"
     >
+      {imageUrl && (
+        <StyledCardChecked>
+          <CustomIcon size="lg" icon={faCheck} />
+        </StyledCardChecked>
+      )}
       {!imageUrl && <FontAwesomeIcon size="2x" icon={faPlus} color={appTheme.pallete.common.normalGrey} />}
     </StyledCard>
   );
