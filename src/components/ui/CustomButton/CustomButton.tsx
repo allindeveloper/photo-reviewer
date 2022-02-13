@@ -22,7 +22,6 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   width: 200px;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
   img {
     width: 10%;
   }

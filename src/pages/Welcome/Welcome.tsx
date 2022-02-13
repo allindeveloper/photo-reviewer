@@ -1,3 +1,4 @@
+import ApprovedImages from "components/shared/Image/ApprovedImages";
 import React from "react";
 import Container from "../../components/shared/Container";
 import ImageContainer from "../../components/shared/ImageContainer";
@@ -21,6 +22,8 @@ const Welcome = () => {
             <p>
               <label>Approved Images</label>
             </p>
+
+            <ApprovedImages />
           </div>
 
           <div className={styles.bottomSection}>

@@ -1,8 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../styles/mediaQuery";
 
 const StyledContainer = styled.div`
-  max-width: 900px;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
+
+  @media ${device.desktop} {
+    max-width: 1400px;
+  }
   margin: 0 auto;
   display: flex;
   flex-grow: 1;
