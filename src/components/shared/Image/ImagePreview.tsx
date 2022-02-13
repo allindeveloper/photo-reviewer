@@ -5,7 +5,7 @@ import styled, { useTheme } from "styled-components";
 import PreLoader from "../../ui/Loader/PreLoader";
 const StyledImagePreview = styled.div`
   background-color: ${props => props.theme.pallete.common.offwhite};
-  height: 350px;
+  height: 450px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -17,7 +17,8 @@ const StyledImagePreview = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 39%;
+    width: 40%;
+    object-fit: cover;
     height: 40%;
   }
   &:hover {

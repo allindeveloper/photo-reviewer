@@ -2,28 +2,39 @@ import { AxiosError, AxiosResponse } from "axios";
 import { useState } from "react";
 import { getRandomImageApiService } from "services/images";
 import { IImage } from "types/image";
+import { useAppSelector } from "./hooks";
 const useGetRandomImage = () => {
-  const [randomImage, setrandomImage] = useState<IImage>({urls: {
-    raw: "",
-    full: "",
-    regular: "",
-    small: "",
-    thumb: "",
-},
-id:''});
+  const [randomImage, setrandomImage] = useState<IImage>({
+    urls: {
+      raw: "",
+      full: "",
+      regular: "",
+      small: "",
+      thumb: "",
+    },
+    id: "",
+  });
   const [loading, setloading] = useState(false);
+  const images = useAppSelector(state => state.imageReducer);
 
   const getRandomImage = () => {
     setloading(true);
     getRandomImageApiService()
-      .then((res:AxiosResponse<IImage>) => {
+      .then((res: AxiosResponse<IImage>) => {
         setloading(false);
-       setrandomImage({
-         id:res.data.id,
-         urls:res.data.urls
-       })
+        const imageExist = images.approvedImages.some(
+          item => item.id === res.data.id && item.urls.regular === res.data.urls.regular,
+        );
+        if (imageExist) {
+          getRandomImage();
+        } else {
+          setrandomImage({
+            id: res.data.id,
+            urls: res.data.urls,
+          });
+        }
       })
-      .catch((err:AxiosError) => {
+      .catch((err: AxiosError) => {
         setloading(false);
       });
   };

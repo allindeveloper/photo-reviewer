@@ -29,7 +29,9 @@ const Welcome = () => {
   };
 
   const handleApprove = () => {
-    dispatch(approveImage(randomImage));
+    if (randomImage?.urls?.regular) {
+      dispatch(approveImage(randomImage));
+    }
   };
 
   const handleGetRandomImage = () => {

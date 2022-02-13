@@ -1,7 +1,7 @@
-import check from "assets/svg/check-solid.svg";
-import times from "assets/svg/xmark-solid.svg";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import styled from "styled-components";
+import { CustomIcon } from "../Icons/CustomIcon";
 
 export interface ICustomButtonProps {
   state?: "cancel" | "okay";
@@ -19,7 +19,8 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   justify-content: center;
   align-items: center;
   height: 60px;
-  width: 200px;
+  padding-left: 70px;
+  padding-right: 70px;
   border-radius: 30px;
   cursor: pointer;
   img {
@@ -29,7 +30,7 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
 export const CustomButton: React.FC<ICustomButtonProps> = ({ state = "cancel", disabled, onClick }) => {
   return (
     <StyledCustomButton state={state} disabled={disabled} onClick={onClick}>
-      <img src={state === "cancel" ? times : check} />
+      {state === "cancel" ? <CustomIcon icon={faTimes} size="2x" /> : <CustomIcon size="2x" icon={faCheck} />}
     </StyledCustomButton>
   );
 };
