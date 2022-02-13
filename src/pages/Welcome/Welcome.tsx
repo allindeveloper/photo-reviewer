@@ -4,13 +4,13 @@ import ImageContainer from "components/shared/ImageContainer";
 import { CustomButton } from "components/ui/CustomButton/CustomButton";
 import { Space } from "components/ui/Space/Space";
 import { useAppDispatch, useAppSelector } from "hooks/hooks";
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import ImagePreview from "../../components/shared/Image/ImagePreview";
+import PlusIcon from "../../components/ui/Icons/PlusIcon";
 import useGetRandomImage from "../../hooks/useGetRandomImage";
 import { approveImage } from "../../redux/reducers/imageReducer";
 import styles from "./welcome.module.css";
-
 const StyledP = styled.p`
   text-transform: uppercase;
   font-weight: 600;
@@ -23,10 +23,6 @@ const Welcome = () => {
   const images = useAppSelector(state => state.imageReducer);
 
   const { getRandomImage, loading, randomImage } = useGetRandomImage();
-
-  useEffect(() => {
-    console.log("approvedImages", images.approvedImages);
-  }, []);
 
   const handleCancel = () => {
     getRandomImage();
@@ -70,6 +66,11 @@ const Welcome = () => {
             <hr />
             <Space top={40} />
 
+            <div className={styles.welcomeEmpty}>
+              <label>
+                Click on the <PlusIcon size="1x" /> in order to get image recommendations
+              </label>
+            </div>
             <div className={styles.welcomeActions}>
               <div>
                 <CustomButton onClick={handleCancel} state={"cancel"} />

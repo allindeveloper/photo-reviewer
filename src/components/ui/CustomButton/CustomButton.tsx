@@ -18,7 +18,7 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 60px;
   width: 200px;
   border-radius: 30px;
   cursor: pointer;

@@ -17,3 +17,9 @@
 .caption {
   padding-left: 30px;
 }
+
+.welcomeEmpty {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
