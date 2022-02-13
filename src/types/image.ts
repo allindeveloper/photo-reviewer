@@ -9,6 +9,4 @@ export interface IImage {
     id:string;
 }
 
-export interface IApprovedImage extends IImage {
-    approved?:boolean
-}
+export interface IApprovedImage extends IImage {}

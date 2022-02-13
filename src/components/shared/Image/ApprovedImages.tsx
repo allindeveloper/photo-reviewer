@@ -29,7 +29,7 @@ const ApprovedImages = ({ approvedImages }: IApprovedImages) => {
     <>
       <div>
         <div>
-          {approvedImages.length === 0 && <Card title={""} itemId={""} />}
+          {approvedImages.length === 0 && <Card imageUrl={""} title={""} itemId={""} />}
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} onWheel={onWheel}>
             {approvedImages.length > 0 ? (
               approvedImages.map((item, index) => (
