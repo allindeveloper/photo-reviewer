@@ -54,7 +54,11 @@ const Welcome = () => {
 
           <div className={styles.bottomSection}>
             <hr />
-            <ImagePreview imageUrl="" getRandomImage={handleGetRandomImage} isLoading={loading} />
+            <ImagePreview
+              imageUrl={randomImage.urls.regular}
+              getRandomImage={handleGetRandomImage}
+              isLoading={loading}
+            />
             <hr />
             <Space top={40} />
 

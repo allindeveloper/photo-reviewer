@@ -7,7 +7,7 @@ const AxiosInstance = axios.create({
 });
 AxiosInstance.interceptors.request.use(
   async (config: AxiosRequestConfig) => {
-    config.headers["Authorization"] = `Client-ID ${process&&process.env.REACT_APP_UNSPLASH_CLIENT_ID}`
+    config.headers["Authorization"] = `Client-ID ${process.env.REACT_APP_UNSPLASH_CLIENT_ID}`
     return config;
   },
 
