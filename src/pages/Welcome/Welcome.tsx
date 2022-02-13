@@ -1,11 +1,19 @@
+import Container from "components/shared/Container";
 import ApprovedImages from "components/shared/Image/ApprovedImages";
-import React from "react";
-import Container from "../../components/shared/Container";
-import ImageContainer from "../../components/shared/ImageContainer";
-import { CustomButton } from "../../components/ui/CustomButton/CustomButton";
-import { Space } from "../../components/ui/Space/Space";
+import ImageContainer from "components/shared/ImageContainer";
+import { CustomButton } from "components/ui/CustomButton/CustomButton";
+import { Space } from "components/ui/Space/Space";
+import { useAppDispatch } from "hooks/hooks";
+import React, { useEffect } from "react";
+import ImagePreview from "../../components/shared/Image/ImagePreview";
 import styles from "./welcome.module.css";
 const Welcome = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {}, []);
+
+  const handleCancel = () => {};
+
+  const handleApprove = () => {};
   return (
     <div className={styles.welcomeRoot}>
       <Container>
@@ -27,15 +35,16 @@ const Welcome = () => {
           </div>
 
           <div className={styles.bottomSection}>
+            <ImagePreview />
             <hr />
             <Space top={40} />
 
             <div className={styles.welcomeActions}>
               <div>
-                <CustomButton state={"cancel"} />
+                <CustomButton onClick={handleCancel} state={"cancel"} />
               </div>
               <div>
-                <CustomButton state={"okay"} />
+                <CustomButton onClick={handleApprove} state={"okay"} />
               </div>
             </div>
           </div>

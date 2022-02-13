@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "styled-components";
-import { store } from "./core/redux/store";
 import "./index.css";
 import Welcome from "./pages/Welcome/Welcome";
+import { store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
 import { myTheme } from "./styles/theme";
 
