@@ -18,7 +18,10 @@ id:''});
     getRandomImageApiService()
       .then((res:AxiosResponse<IImage>) => {
         setloading(false);
-       setrandomImage(res.data)
+       setrandomImage({
+         id:res.data.id,
+         urls:res.data.urls
+       })
       })
       .catch((err:AxiosError) => {
         setloading(false);

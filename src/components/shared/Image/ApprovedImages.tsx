@@ -1,13 +1,13 @@
 import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import { IImage } from "../../../types/image";
+import { IApprovedImage } from "../../../types/image";
 import { LeftArrow, RightArrow } from "./Arrows";
 import { Card } from "./Card";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 export interface IApprovedImages {
-  approvedImages: IImage[];
+  approvedImages: IApprovedImage[];
 }
 
 const ApprovedImages = ({ approvedImages }: IApprovedImages) => {
@@ -29,10 +29,15 @@ const ApprovedImages = ({ approvedImages }: IApprovedImages) => {
     <>
       <div>
         <div>
+          {approvedImages.length === 0 && <Card title={""} itemId={""} />}
           <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} onWheel={onWheel}>
-            {approvedImages.map(({ id }) => (
-              <Card title={id} itemId={id} key={id} />
-            ))}
+            {approvedImages.length > 0 ? (
+              approvedImages.map((item, index) => (
+                <Card imageUrl={item.urls.regular} title={item.id} itemId={item.id} key={item.id + index} />
+              ))
+            ) : (
+              <div></div>
+            )}
           </ScrollMenu>
         </div>
       </div>

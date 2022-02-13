@@ -8,6 +8,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import ImagePreview from "../../components/shared/Image/ImagePreview";
 import useGetRandomImage from "../../hooks/useGetRandomImage";
+import { approveImage } from "../../redux/reducers/imageReducer";
 import styles from "./welcome.module.css";
 
 const StyledP = styled.p`
@@ -19,14 +20,21 @@ const StyledP = styled.p`
 `;
 const Welcome = () => {
   const dispatch = useAppDispatch();
-  const approvedImages = useAppSelector(state => state.imageReducer);
+  const images = useAppSelector(state => state.imageReducer);
 
   const { getRandomImage, loading, randomImage } = useGetRandomImage();
-  useEffect(() => {}, []);
 
-  const handleCancel = () => {};
+  useEffect(() => {
+    console.log("approvedImages", images.approvedImages);
+  }, []);
 
-  const handleApprove = () => {};
+  const handleCancel = () => {
+    getRandomImage();
+  };
+
+  const handleApprove = () => {
+    dispatch(approveImage(randomImage));
+  };
 
   const handleGetRandomImage = () => {
     getRandomImage();
@@ -46,10 +54,10 @@ const Welcome = () => {
 
           <div className={styles.approvedImages}>
             <StyledP>
-              <label>Approved Images</label>
+              <label>Approved Images ({images?.approvedImages.length})</label>
             </StyledP>
 
-            <ApprovedImages approvedImages={approvedImages} />
+            <ApprovedImages approvedImages={images?.approvedImages} />
           </div>
 
           <div className={styles.bottomSection}>

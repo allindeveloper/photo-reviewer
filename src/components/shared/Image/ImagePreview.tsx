@@ -20,6 +20,9 @@ const StyledImagePreview = styled.div`
     width: 39%;
     height: 40%;
   }
+  &:hover {
+    background-color: ${props => props.theme.pallete.common.lightGrey};
+  }
 `;
 interface IImagePreviewProps {
   getRandomImage: () => void;
