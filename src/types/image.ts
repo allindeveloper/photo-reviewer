@@ -9,5 +9,3 @@ export interface IImage {
     description: string;
     id:string;
 }
-
-export interface IApprovedImage extends IImage {}

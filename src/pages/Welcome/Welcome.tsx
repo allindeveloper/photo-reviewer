@@ -9,7 +9,7 @@ import styled from "styled-components";
 import ImagePreview from "../../components/shared/Image/ImagePreview";
 import PlusIcon from "../../components/ui/Icons/PlusIcon";
 import useGetRandomImage from "../../hooks/useGetRandomImage";
-import { approveImage } from "../../redux/reducers/imageReducer";
+import { approveImage, rejectImage } from "../../redux/reducers/imageReducer";
 import styles from "./welcome.module.css";
 const StyledP = styled.p`
   text-transform: uppercase;
@@ -23,10 +23,11 @@ const Welcome = () => {
   const images = useAppSelector(state => state.imageReducer);
 
   const { getRandomImage, loading, randomImage } = useGetRandomImage();
-  const imageExist = images.approvedImages.some(
+  const imageExist = images.rejectedImages.some(
     item => item.id === randomImage.id && item.urls.regular === randomImage.urls.regular,
   );
   const handleCancel = () => {
+    dispatch(rejectImage(randomImage));
     getRandomImage();
   };
 

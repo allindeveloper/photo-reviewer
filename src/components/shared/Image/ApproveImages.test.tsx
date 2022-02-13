@@ -1,7 +1,7 @@
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../../styles/theme";
-import { IApprovedImage } from "../../../types/image";
+import { IImage } from "../../../types/image";
 import { setupIntersectionObserverMock } from "../../../utils/testUtils";
 import ApprovedImages from "./ApprovedImages";
 
@@ -21,7 +21,7 @@ it("Approved Images renders correctly when there are no items", () => {
 });
 
 it("Approved Images correctly when there is a single approved Image", () => {
-  const approvedImages: IApprovedImage[] = [
+  const approvedImages: IImage[] = [
     {
       id: "JmFldiNGY18",
       description: "First Image",
@@ -51,7 +51,7 @@ it("Approved Images correctly when there is a single approved Image", () => {
 });
 
 it("renders correctly when there are multiple items", () => {
-  const approvedImages: IApprovedImage[] = [
+  const approvedImages: IImage[] = [
     {
       id: "JmFldiNGY18",
       description: "First Image",

@@ -1,13 +1,13 @@
 import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import { IApprovedImage } from "../../../types/image";
+import { IImage } from "../../../types/image";
 import { LeftArrow, RightArrow } from "./Arrows";
 import { Card } from "./Card";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 export interface IApprovedImages {
-  approvedImages: IApprovedImage[];
+  approvedImages: IImage[];
 }
 
 const ApprovedImages = ({ approvedImages }: IApprovedImages) => {

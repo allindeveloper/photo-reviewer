@@ -23,7 +23,8 @@ const useGetRandomImage = () => {
     getRandomImageApiService()
       .then((res: AxiosResponse<IImage>) => {
         setloading(false);
-        const imageExist = images.approvedImages.some(
+        // need to change this logic
+        const imageExist = images.rejectedImages.some(
           item => item.id === res.data.id && item.urls.regular === res.data.urls.regular,
         );
         if (imageExist) {
