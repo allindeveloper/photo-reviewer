@@ -9,7 +9,6 @@ export interface ICustomButtonProps {
   onClick?: () => void;
 }
 const StyledCustomButton = styled.div<ICustomButtonProps>`
-  background: url(${props => (props.state === "cancel" ? check : times)});
   background-size: contain;
   background-color: ${props =>
     props.state === "cancel" ? props.theme.pallete.common.brown : props.theme.pallete.primary.main};
@@ -22,7 +21,16 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   height: 50px;
   width: 200px;
   border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  img {
+    width: 10%;
+  }
 `;
 export const CustomButton: React.FC<ICustomButtonProps> = ({ state = "cancel", disabled, onClick }) => {
-  return <StyledCustomButton state={state} disabled={disabled} onClick={onClick}></StyledCustomButton>;
+  return (
+    <StyledCustomButton state={state} disabled={disabled} onClick={onClick}>
+      <img src={state === "cancel" ? times : check} />
+    </StyledCustomButton>
+  );
 };

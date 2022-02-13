@@ -1,0 +1,17 @@
+.welcomeRoot hr {
+  border: 1px solid #efefef;
+}
+
+.welcomeActions {
+  display: flex;
+  justify-content: space-between;
+}
+.bottomSection {
+  padding: 10px 20px;
+}
+.approvedImages {
+  padding: 10px 20px;
+}
+.caption {
+  padding: 10px 20px;
+}

@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const StyledImageContainer = styled.div`
   border-radius: 6px;
-  padding: 10px 20px;
   width: 100%;
   background-color: ${props => props.theme.pallete.common.white};
 `;
