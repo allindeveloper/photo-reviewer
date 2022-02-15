@@ -65,19 +65,6 @@ describe("Welcome Component", () => {
   });
 });
 
-// it("Init Welcome Component", () => {
-//   const { getByTestId } = render(
-//     <Provider store={store}>
-//       <ThemeProvider theme={myTheme}>
-//         {" "}
-//         <Welcome />
-//       </ThemeProvider>
-//     </Provider>,
-//   );
-
-//   expect(getByTestId("welcomeEmpty")).toBeInTheDocument();
-// });
-
 it("Approve Button was Clicked and Image was Rendered", async () => {
   const mockStore = (
     state = {
