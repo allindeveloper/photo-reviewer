@@ -3,7 +3,7 @@ import { IImage } from "types/image";
 
 export const removeImage = createAction<IImage, "removeImage">("removeImage");
 export const addImage = createAction<IImage, "addImage">("addImage");
-interface ImageReducerState {
+export interface ImageReducerState {
   rejectedImages: IImage[];
   approvedImages: IImage[];
 }

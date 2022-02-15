@@ -98,7 +98,7 @@ const Welcome = () => {
                   <CustomButton testId="rejectButton" onClick={handleCancel} state={"cancel"} />
                 </div>
                 <div>
-                  <CustomButton testId="approveImage" onClick={handleApprove} state={"okay"} />
+                  <CustomButton testId="approveButton" onClick={handleApprove} state={"okay"} />
                 </div>
               </div>
             )}

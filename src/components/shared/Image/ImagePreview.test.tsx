@@ -31,7 +31,7 @@ it("Render Image when isLoading is false and imageUrl Exists", () => {
     </ThemeProvider>,
   );
 
-  expect(getByTestId("image")).toBeInTheDocument();
+  expect(getByTestId("imagePreview")).toBeInTheDocument();
 });
 
 it("Image Preview Shows Plus Icon on Load", () => {

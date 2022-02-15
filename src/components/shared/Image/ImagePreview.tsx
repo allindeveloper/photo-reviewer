@@ -45,7 +45,7 @@ const ImagePreview = ({ testId, isLoading, getRandomImage, imageUrl, description
       )}
       {!isLoading && imageUrl && imageUrl && (
         <div>
-          <img data-testid={"image"} src={imageUrl} alt={description} />
+          <img data-testid={"imagePreview"} src={imageUrl} alt={description} />
         </div>
       )}
 
