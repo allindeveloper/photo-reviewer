@@ -49,8 +49,11 @@ it("Approved Images correctly when there is a single approved Image", () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-// check for the number of images shown in the
-// after clicking on approve button, then the approved images length should increase
+
+/**
+ * check for the number of images shown 
+   after clicking on approve button, then the approved images length should increase
+ */
 
 it("renders correctly when there are multiple items", () => {
   const approvedImages: IImage[] = [
