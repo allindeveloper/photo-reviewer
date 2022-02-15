@@ -16,6 +16,7 @@ const StyledP = styled.p`
   font-weight: 600;
   margin-bottom: 25px;
   margin-top: 25px;
+  font-weight: bolder;
   color: ${props => props.theme.pallete.primary.main};
 `;
 const Welcome = () => {
