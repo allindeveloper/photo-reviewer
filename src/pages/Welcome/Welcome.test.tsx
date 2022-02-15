@@ -98,6 +98,6 @@ it("Approve Button was Clicked and Image was Rendered", async () => {
   const approveButton = getByTestId("approveButton");
 
   fireEvent.click(approveButton);
-  expect(getByRole("img")).toHaveAttribute("src", mockConfig.randomImage.urls.regular);
-  expect(getByRole("img")).toHaveAttribute("alt", mockConfig.randomImage.description);
+  expect(getByTestId("imagePreview")).toHaveAttribute("src", mockConfig.randomImage.urls.regular);
+  expect(getByTestId("imagePreview")).toHaveAttribute("alt", mockConfig.randomImage.description);
 });
