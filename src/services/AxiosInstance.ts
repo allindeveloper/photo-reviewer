@@ -2,8 +2,8 @@ import axios, { AxiosError, AxiosRequestConfig } from "axios";
 import { getBaseUrl } from "../utils/globalUtils";
 
 
-const AxiosInstance = axios.create({
-  baseURL: getBaseUrl()
+let AxiosInstance = axios.create({
+  baseURL: getBaseUrl(),
 });
 AxiosInstance.interceptors.request.use(
   async (config: AxiosRequestConfig) => {

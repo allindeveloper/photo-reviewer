@@ -48,3 +48,17 @@ it("Init Welcome Component", () => {
 
   expect(getByTestId("welcomeEmpty")).toBeInTheDocument();
 });
+
+it("Approve Button was Clicked", async () => {
+  const { getByTestId } = render(
+    <Provider store={store}>
+      <ThemeProvider theme={myTheme}>
+        {" "}
+        <Welcome />
+      </ThemeProvider>
+    </Provider>,
+  );
+  const approveButton = getByTestId("approveImage");
+
+  fireEvent.click(approveButton);
+});

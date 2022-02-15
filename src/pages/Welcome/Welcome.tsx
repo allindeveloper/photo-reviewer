@@ -72,6 +72,7 @@ const Welcome = () => {
 
           <div className={styles.bottomSection}>
             <hr />
+            <Space top={25} />
             <ImagePreview
               imageUrl={randomImage.urls.regular}
               description={randomImage.description}
@@ -79,6 +80,7 @@ const Welcome = () => {
               isLoading={loading}
               testId={"getRandomImage"}
             />
+            <Space top={45} />
             <hr />
             <Space top={40} />
 
@@ -99,6 +101,7 @@ const Welcome = () => {
                 </div>
               </div>
             )}
+            <Space top={25} />
           </div>
         </ImageContainer>
       </Container>

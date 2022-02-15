@@ -1,56 +1,49 @@
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
+import { useTheme } from "styled-components";
+import CustomIcon from "../../ui/Icons/CustomIcon";
 
-function Arrow({
-  children,
-  disabled,
-  onClick,
-}: {
-  children: React.ReactNode;
-  disabled: boolean;
-  onClick: VoidFunction;
-}) {
-  return (
-    <button
-      disabled={disabled}
-      onClick={onClick}
-      style={{
-        cursor: "pointer",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        right: "1%",
-        opacity: disabled ? "0" : "1",
-        userSelect: "none",
-      }}
-    >
-      {children}
-    </button>
-  );
-}
+const arrowStyle = {
+  cursor: "pointer",
+  display: "flex",
+  "justify-content": "center",
+  right: "1%",
+  "margin-right": "5px",
+  "align-self": "center",
+  "user-select": "none",
+};
 
-export function LeftArrow() {
+export const LeftArrow = () => {
   const { isFirstItemVisible, scrollPrev, visibleItemsWithoutSeparators, initComplete } = React.useContext(
     VisibilityContext,
   );
-
+  const appTheme = useTheme();
   const [disabled, setDisabled] = React.useState(!initComplete || (initComplete && isFirstItemVisible));
   React.useEffect(() => {
-    // NOTE: detect if whole component visible
     if (visibleItemsWithoutSeparators.length) {
       setDisabled(isFirstItemVisible);
     }
   }, [isFirstItemVisible, visibleItemsWithoutSeparators]);
 
   return (
-    <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      Left
-    </Arrow>
+    <>
+      {!disabled && (
+        <CustomIcon
+          style={arrowStyle}
+          size={"2x"}
+          color={appTheme.pallete.primary.main}
+          onClick={() => scrollPrev()}
+          icon={faAngleLeft}
+        />
+      )}
+    </>
   );
-}
+};
 
-export function RightArrow() {
+export const RightArrow = () => {
   const { isLastItemVisible, scrollNext, visibleItemsWithoutSeparators } = React.useContext(VisibilityContext);
+  const appTheme = useTheme();
 
   const [disabled, setDisabled] = React.useState(!visibleItemsWithoutSeparators.length && isLastItemVisible);
   React.useEffect(() => {
@@ -60,8 +53,16 @@ export function RightArrow() {
   }, [isLastItemVisible, visibleItemsWithoutSeparators]);
 
   return (
-    <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      Right
-    </Arrow>
+    <>
+      {!disabled && (
+        <CustomIcon
+          style={{ ...arrowStyle, ...{ marginLeft: "5px" } }}
+          size={"2x"}
+          color={appTheme.pallete.primary.main}
+          onClick={() => scrollNext()}
+          icon={faAngleRight}
+        />
+      )}
+    </>
   );
-}
+};

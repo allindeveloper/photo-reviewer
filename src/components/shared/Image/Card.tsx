@@ -13,7 +13,7 @@ interface CardProps {
 const StyledCard = styled.div<CardProps>`
   background-color: ${props =>
     props.imageUrl ? props.theme.pallete.primary.main : props.theme.pallete.common.offwhite};
-  height: 70px;
+  height: 60px;
   background-blend-mode: ${props => (props.imageUrl ? "overlay" : "blend")};
   border-radius: ${props => (props.imageUrl ? "6px" : "4px")};
   text-align: center;
@@ -38,7 +38,7 @@ export const Card = ({ title, itemId, imageUrl }: CardProps) => {
       role="button"
       style={{
         margin: "0px 8px 0px 8px",
-        width: "120px",
+        width: "110px",
         userSelect: "none",
       }}
       title={title}

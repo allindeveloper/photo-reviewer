@@ -4,7 +4,7 @@ import { device } from "../../styles/mediaQuery";
 
 const StyledContainer = styled.div`
   @media ${device.laptop} {
-    max-width: 800px;
+    max-width: 600px;
   }
 
   @media ${device.desktop} {

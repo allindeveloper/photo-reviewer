@@ -17,9 +17,9 @@ const StyledImagePreview = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    max-width: 70%;
     object-fit: cover;
-    height: 40%;
+    height: 100%;
   }
   &:hover {
     background-color: ${props => props.theme.pallete.common.lightGrey};
