@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
@@ -29,6 +29,11 @@ const mockConfig = {
   getRandomImage: jest.fn(),
   loading: false,
 };
+const mockStore = (
+  state = {
+    imageReducer: initState,
+  },
+) => configureMockStore()(state);
 
 jest.mock("../../hooks/useGetRandomImage", () => {
   return {
@@ -48,7 +53,7 @@ beforeEach(() => {
   window.IntersectionObserver = mockIntersectionObserver;
 });
 
-describe("Welcome Component", () => {
+it("Welcome Component Renders Correctly", () => {
   render(
     <Provider store={store}>
       <ThemeProvider theme={myTheme}>
@@ -57,21 +62,27 @@ describe("Welcome Component", () => {
       </ThemeProvider>
     </Provider>,
   );
-  const element = screen.getByTestId("getRandomImage");
-  fireEvent.click(element);
+});
 
-  it("Approve Button should be called", () => {
-    expect(element).toBeTruthy();
-  });
+it("Plus Icon was Clicked and Image was Rendered", () => {
+  const { getByTestId, getByRole } = render(
+    <Provider
+      store={mockStore({
+        imageReducer: initState,
+      })}
+    >
+      <ThemeProvider theme={myTheme}>
+        {" "}
+        <Welcome />
+      </ThemeProvider>
+    </Provider>,
+  );
+  const plusIcon = getByTestId("getRandomImage");
+  fireEvent.click(plusIcon);
+  expect(getByRole("img")).toHaveAttribute("src", mockConfig.randomImage.urls.regular);
 });
 
 it("Approve Button was Clicked and Image was Rendered", async () => {
-  const mockStore = (
-    state = {
-      imageReducer: initState,
-    },
-  ) => configureMockStore()(state);
-
   const { getByTestId, getByRole } = render(
     <Provider
       store={mockStore({
