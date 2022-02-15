@@ -8,6 +8,9 @@ declare module 'styled-components' {
         common:{
             white:string;
             brown:string;
+            offwhite:string;
+            lightGrey:string;
+            normalGrey:string;
         }
             primary: IPalette;
           };

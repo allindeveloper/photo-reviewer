@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Approved Images correctly when there is a single approved Image 1`] = `
+<div>
+  <div>
+    <div
+      className="react-horizontal-scrolling-menu--wrapper "
+      onWheel={[Function]}
+    >
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "opacity": "0",
+            "right": "1%",
+            "userSelect": "none",
+          }
+        }
+      >
+        Left
+      </button>
+      <div
+        className="react-horizontal-scrolling-menu--scroll-container "
+        onScroll={[Function]}
+      >
+        <div
+          className="react-horizontal-scrolling-menu--item "
+          data-index={0}
+          data-key="JmFldiNGY18"
+        >
+          <div
+            className="sc-bdvvtL gLoyjc card"
+            role="button"
+            style={
+              Object {
+                "margin": "0px 8px 0px 8px",
+                "userSelect": "none",
+                "width": "120px",
+              }
+            }
+            tabIndex={0}
+            title="JmFldiNGY18"
+          >
+            <div
+              className="sc-gsDKAQ iqFBTl"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-check fa-lg "
+                color="#ffffff"
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "opacity": "1",
+            "right": "1%",
+            "userSelect": "none",
+          }
+        }
+      >
+        Right
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Approved Images renders correctly when there are no items 1`] = `
+<div>
+  <div>
+    <div
+      className="sc-bdvvtL UjuGD card"
+      role="button"
+      style={
+        Object {
+          "margin": "0px 8px 0px 8px",
+          "userSelect": "none",
+          "width": "120px",
+        }
+      }
+      tabIndex={0}
+      title=""
+    >
+      
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-plus fa-2x "
+        color="#e3e8f0"
+        data-icon="plus"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly when there are multiple items 1`] = `
+<div>
+  <div>
+    <div
+      className="react-horizontal-scrolling-menu--wrapper "
+      onWheel={[Function]}
+    >
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "opacity": "0",
+            "right": "1%",
+            "userSelect": "none",
+          }
+        }
+      >
+        Left
+      </button>
+      <div
+        className="react-horizontal-scrolling-menu--scroll-container "
+        onScroll={[Function]}
+      >
+        <div
+          className="react-horizontal-scrolling-menu--item "
+          data-index={0}
+          data-key="JmFldiNGY18"
+        >
+          <div
+            className="sc-bdvvtL gLoyjc card"
+            role="button"
+            style={
+              Object {
+                "margin": "0px 8px 0px 8px",
+                "userSelect": "none",
+                "width": "120px",
+              }
+            }
+            tabIndex={0}
+            title="JmFldiNGY18"
+          >
+            <div
+              className="sc-gsDKAQ iqFBTl"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-check fa-lg "
+                color="#ffffff"
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="react-horizontal-scrolling-menu--separator "
+          data-index={0.1}
+          data-key="JmFldiNGY18-separator"
+        />
+        <div
+          className="react-horizontal-scrolling-menu--item "
+          data-index={1}
+          data-key="sNS-uuP01hE"
+        >
+          <div
+            className="sc-bdvvtL ciWspE card"
+            role="button"
+            style={
+              Object {
+                "margin": "0px 8px 0px 8px",
+                "userSelect": "none",
+                "width": "120px",
+              }
+            }
+            tabIndex={0}
+            title="sNS-uuP01hE"
+          >
+            <div
+              className="sc-gsDKAQ iqFBTl"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-check fa-lg "
+                color="#ffffff"
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "opacity": "1",
+            "right": "1%",
+            "userSelect": "none",
+          }
+        }
+      >
+        Right
+      </button>
+    </div>
+  </div>
+</div>
+`;

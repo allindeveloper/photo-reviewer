@@ -1,0 +1,26 @@
+.welcomeRoot hr {
+  border: 1px solid #efefef;
+}
+
+.welcomeActions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bottomSection {
+  padding: 10px 30px;
+}
+.approvedImages {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.caption {
+  padding-left: 30px;
+}
+
+.welcomeEmpty {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  opacity: 0.5;
+}

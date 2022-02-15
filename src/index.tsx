@@ -1,16 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "styled-components";
 import "./index.css";
 import Welcome from "./pages/Welcome/Welcome";
+import { store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
 import { myTheme } from "./styles/theme";
 
+let persistor = persistStore(store);
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={myTheme}>
-      <Welcome />
-    </ThemeProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ThemeProvider theme={myTheme}>
+          <Welcome />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root"),
 );

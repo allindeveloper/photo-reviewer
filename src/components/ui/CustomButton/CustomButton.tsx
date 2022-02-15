@@ -1,15 +1,15 @@
-import check from "assets/svg/check-solid.svg";
-import times from "assets/svg/xmark-solid.svg";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import styled from "styled-components";
+import { CustomIcon } from "../Icons/CustomIcon";
 
 export interface ICustomButtonProps {
   state?: "cancel" | "okay";
   disabled?: boolean;
   onClick?: () => void;
+  testId?: string;
 }
 const StyledCustomButton = styled.div<ICustomButtonProps>`
-  background: url(${props => (props.state === "cancel" ? check : times)});
   background-size: contain;
   background-color: ${props =>
     props.state === "cancel" ? props.theme.pallete.common.brown : props.theme.pallete.primary.main};
@@ -19,10 +19,19 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 200px;
+  height: 60px;
+  padding-left: 70px;
+  padding-right: 70px;
   border-radius: 30px;
+  cursor: pointer;
+  img {
+    width: 10%;
+  }
 `;
-export const CustomButton: React.FC<ICustomButtonProps> = ({ state = "cancel", disabled, onClick }) => {
-  return <StyledCustomButton state={state} disabled={disabled} onClick={onClick}></StyledCustomButton>;
+export const CustomButton: React.FC<ICustomButtonProps> = ({ testId, state = "cancel", disabled, onClick }) => {
+  return (
+    <StyledCustomButton data-testid={testId} state={state} disabled={disabled} onClick={onClick}>
+      {state === "cancel" ? <CustomIcon icon={faTimes} size="2x" /> : <CustomIcon size="2x" icon={faCheck} />}
+    </StyledCustomButton>
+  );
 };

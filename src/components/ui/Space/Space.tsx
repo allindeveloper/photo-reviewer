@@ -5,5 +5,5 @@ interface SpaceProps {
   bottom?: number;
 }
 export const Space: React.FC<SpaceProps> = ({ top = 0, bottom = 0 }) => {
-  return <div style={{ marginTop: `${top}px`, marginBottom: `${bottom}px` }}></div>;
+  return <div data-testid="spaceComponent" style={{ marginTop: `${top}px`, marginBottom: `${bottom}px` }}></div>;
 };
