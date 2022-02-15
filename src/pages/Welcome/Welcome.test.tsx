@@ -96,8 +96,36 @@ it("Approve Button was Clicked and Image was Rendered", async () => {
     </Provider>,
   );
   const approveButton = getByTestId("approveButton");
+  const plusIcon = getByTestId("getRandomImage");
+  fireEvent.click(plusIcon);
 
   fireEvent.click(approveButton);
   expect(getByTestId("imagePreview")).toHaveAttribute("src", mockConfig.randomImage.urls.regular);
   expect(getByTestId("imagePreview")).toHaveAttribute("alt", mockConfig.randomImage.description);
+});
+
+it("Approved Images should be Unique", async () => {
+  const { getByTestId, getAllByTestId } = render(
+    <Provider
+      store={mockStore({
+        imageReducer: initState,
+      })}
+    >
+      <ThemeProvider theme={myTheme}>
+        {" "}
+        <Welcome />
+      </ThemeProvider>
+    </Provider>,
+  );
+  const approveButton = getByTestId("approveButton");
+  const plusIcon = getByTestId("getRandomImage");
+  fireEvent.click(plusIcon);
+
+  fireEvent.click(approveButton);
+
+  fireEvent.click(plusIcon);
+
+  fireEvent.click(approveButton);
+
+  expect(getAllByTestId("approvedImages")).toHaveLength(1);
 });

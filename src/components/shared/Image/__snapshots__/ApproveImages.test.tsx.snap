@@ -7,23 +7,6 @@ exports[`Approved Images correctly when there is a single approved Image 1`] = `
       className="react-horizontal-scrolling-menu--wrapper "
       onWheel={[Function]}
     >
-      <button
-        disabled={true}
-        onClick={[Function]}
-        style={
-          Object {
-            "cursor": "pointer",
-            "display": "flex",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "opacity": "0",
-            "right": "1%",
-            "userSelect": "none",
-          }
-        }
-      >
-        Left
-      </button>
       <div
         className="react-horizontal-scrolling-menu--scroll-container "
         onScroll={[Function]}
@@ -34,13 +17,14 @@ exports[`Approved Images correctly when there is a single approved Image 1`] = `
           data-key="JmFldiNGY18"
         >
           <div
-            className="sc-bdvvtL gLoyjc card"
+            className="sc-bdvvtL Xapl card"
+            data-testid="approvedImages"
             role="button"
             style={
               Object {
                 "margin": "0px 8px 0px 8px",
                 "userSelect": "none",
-                "width": "120px",
+                "width": "110px",
               }
             }
             tabIndex={0}
@@ -71,23 +55,36 @@ exports[`Approved Images correctly when there is a single approved Image 1`] = `
           </div>
         </div>
       </div>
-      <button
-        disabled={false}
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-angle-right fa-2x "
+        color="#3b55e6"
+        data-icon="angle-right"
+        data-prefix="fas"
+        focusable="false"
         onClick={[Function]}
+        role="img"
         style={
           Object {
+            "align-self": "center",
             "cursor": "pointer",
             "display": "flex",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "opacity": "1",
+            "justify-content": "center",
+            "margin-right": "5px",
+            "marginLeft": "5px",
             "right": "1%",
-            "userSelect": "none",
+            "user-select": "none",
           }
         }
+        viewBox="0 0 256 512"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Right
-      </button>
+        <path
+          d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
     </div>
   </div>
 </div>
@@ -97,13 +94,14 @@ exports[`Approved Images renders correctly when there are no items 1`] = `
 <div>
   <div>
     <div
-      className="sc-bdvvtL UjuGD card"
+      className="sc-bdvvtL jsLcHi card"
+      data-testid="approvedImages"
       role="button"
       style={
         Object {
           "margin": "0px 8px 0px 8px",
           "userSelect": "none",
-          "width": "120px",
+          "width": "110px",
         }
       }
       tabIndex={0}
@@ -140,23 +138,6 @@ exports[`renders correctly when there are multiple items 1`] = `
       className="react-horizontal-scrolling-menu--wrapper "
       onWheel={[Function]}
     >
-      <button
-        disabled={true}
-        onClick={[Function]}
-        style={
-          Object {
-            "cursor": "pointer",
-            "display": "flex",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "opacity": "0",
-            "right": "1%",
-            "userSelect": "none",
-          }
-        }
-      >
-        Left
-      </button>
       <div
         className="react-horizontal-scrolling-menu--scroll-container "
         onScroll={[Function]}
@@ -167,13 +148,14 @@ exports[`renders correctly when there are multiple items 1`] = `
           data-key="JmFldiNGY18"
         >
           <div
-            className="sc-bdvvtL gLoyjc card"
+            className="sc-bdvvtL Xapl card"
+            data-testid="approvedImages"
             role="button"
             style={
               Object {
                 "margin": "0px 8px 0px 8px",
                 "userSelect": "none",
-                "width": "120px",
+                "width": "110px",
               }
             }
             tabIndex={0}
@@ -214,13 +196,14 @@ exports[`renders correctly when there are multiple items 1`] = `
           data-key="sNS-uuP01hE"
         >
           <div
-            className="sc-bdvvtL ciWspE card"
+            className="sc-bdvvtL jqqObx card"
+            data-testid="approvedImages"
             role="button"
             style={
               Object {
                 "margin": "0px 8px 0px 8px",
                 "userSelect": "none",
-                "width": "120px",
+                "width": "110px",
               }
             }
             tabIndex={0}
@@ -251,23 +234,36 @@ exports[`renders correctly when there are multiple items 1`] = `
           </div>
         </div>
       </div>
-      <button
-        disabled={false}
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-angle-right fa-2x "
+        color="#3b55e6"
+        data-icon="angle-right"
+        data-prefix="fas"
+        focusable="false"
         onClick={[Function]}
+        role="img"
         style={
           Object {
+            "align-self": "center",
             "cursor": "pointer",
             "display": "flex",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "opacity": "1",
+            "justify-content": "center",
+            "margin-right": "5px",
+            "marginLeft": "5px",
             "right": "1%",
-            "userSelect": "none",
+            "user-select": "none",
           }
         }
+        viewBox="0 0 256 512"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Right
-      </button>
+        <path
+          d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
     </div>
   </div>
 </div>

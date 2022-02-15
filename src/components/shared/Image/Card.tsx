@@ -46,6 +46,7 @@ export const Card = ({ title, itemId, imageUrl }: CardProps) => {
       imageUrl={imageUrl}
       tabIndex={0}
       className="card"
+      data-testid="approvedImages"
     >
       {imageUrl && (
         <StyledCardChecked>
