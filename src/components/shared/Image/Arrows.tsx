@@ -4,16 +4,6 @@ import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { useTheme } from "styled-components";
 import CustomIcon from "../../ui/Icons/CustomIcon";
 
-const arrowStyle = {
-  cursor: "pointer",
-  display: "flex",
-  "justify-content": "center",
-  right: "1%",
-  "margin-right": "5px",
-  "align-self": "center",
-  "user-select": "none",
-};
-
 export const LeftArrow = () => {
   const { isFirstItemVisible, scrollPrev, visibleItemsWithoutSeparators, initComplete } = React.useContext(
     VisibilityContext,
@@ -30,7 +20,15 @@ export const LeftArrow = () => {
     <>
       {!disabled && (
         <CustomIcon
-          style={arrowStyle}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            justifyContent: "center",
+            right: "1%",
+            marginRight: "5px",
+            alignSelf: "center",
+            userSelect: "none",
+          }}
           size={"2x"}
           color={appTheme.pallete.primary.main}
           onClick={() => scrollPrev()}
@@ -56,7 +54,15 @@ export const RightArrow = () => {
     <>
       {!disabled && (
         <CustomIcon
-          style={{ ...arrowStyle, ...{ marginLeft: "5px" } }}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            justifyContent: "center",
+            right: "1%",
+            marginLeft: "5px",
+            alignSelf: "center",
+            userSelect: "none",
+          }}
           size={"2x"}
           color={appTheme.pallete.primary.main}
           onClick={() => scrollNext()}

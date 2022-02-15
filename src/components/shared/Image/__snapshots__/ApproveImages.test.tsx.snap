@@ -66,14 +66,13 @@ exports[`Approved Images correctly when there is a single approved Image 1`] = `
         role="img"
         style={
           Object {
-            "align-self": "center",
+            "alignSelf": "center",
             "cursor": "pointer",
             "display": "flex",
-            "justify-content": "center",
-            "margin-right": "5px",
+            "justifyContent": "center",
             "marginLeft": "5px",
             "right": "1%",
-            "user-select": "none",
+            "userSelect": "none",
           }
         }
         viewBox="0 0 256 512"
@@ -245,14 +244,13 @@ exports[`renders correctly when there are multiple items 1`] = `
         role="img"
         style={
           Object {
-            "align-self": "center",
+            "alignSelf": "center",
             "cursor": "pointer",
             "display": "flex",
-            "justify-content": "center",
-            "margin-right": "5px",
+            "justifyContent": "center",
             "marginLeft": "5px",
             "right": "1%",
-            "user-select": "none",
+            "userSelect": "none",
           }
         }
         viewBox="0 0 256 512"
