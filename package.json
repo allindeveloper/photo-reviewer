@@ -44,7 +44,7 @@
   },
   "lint-staged": {
     "*.{js,scss,css,tsx}": [
-      "eslint --fix ."
+      "prettier --write"
     ]
   },
   "parser": "babel-eslint",
