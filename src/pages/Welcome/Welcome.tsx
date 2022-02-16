@@ -1,15 +1,15 @@
 import Container from "components/shared/Container";
 import ApprovedImages from "components/shared/Image/ApprovedImages";
+import ImagePreview from "components/shared/Image/ImagePreview";
 import ImageContainer from "components/shared/ImageContainer";
 import { CustomButton } from "components/ui/CustomButton/CustomButton";
+import PlusIcon from "components/ui/Icons/PlusIcon";
 import { Space } from "components/ui/Space/Space";
 import { useAppDispatch, useAppSelector } from "hooks/hooks";
+import useGetRandomImage from "hooks/useGetRandomImage";
 import React from "react";
+import { approveImage, rejectImage } from "redux/reducers/imageReducer";
 import styled from "styled-components";
-import ImagePreview from "../../components/shared/Image/ImagePreview";
-import PlusIcon from "../../components/ui/Icons/PlusIcon";
-import useGetRandomImage from "../../hooks/useGetRandomImage";
-import { approveImage, rejectImage } from "../../redux/reducers/imageReducer";
 import styles from "./welcome.module.css";
 const StyledP = styled.p`
   text-transform: uppercase;
