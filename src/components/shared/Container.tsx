@@ -13,6 +13,9 @@ const StyledContainer = styled.div`
   @media ${device.mobileS} {
     padding: 30px 20px 30px 20px;
   }
+  hr {
+    border: 1px solid #efefef;
+  }
   margin: 0 auto;
   display: flex;
   flex-grow: 1;
