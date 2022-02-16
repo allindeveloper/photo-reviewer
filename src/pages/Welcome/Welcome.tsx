@@ -9,16 +9,14 @@ import { useAppDispatch, useAppSelector } from "hooks/hooks";
 import useGetRandomImage from "hooks/useGetRandomImage";
 import React from "react";
 import { approveImage, rejectImage } from "redux/reducers/imageReducer";
-import styled from "styled-components";
-import styles from "./welcome.module.css";
-const StyledP = styled.p`
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  font-weight: bolder;
-  color: ${props => props.theme.pallete.primary.main};
-`;
+import {
+  ApprovedImagesSection,
+  BottomSection,
+  StyledP,
+  WelcomeActions,
+  WelcomeEmpty,
+} from "../../styles/welcomeStyles";
+
 const Welcome = () => {
   const dispatch = useAppDispatch();
   const images = useAppSelector(state => state.imageReducer);
@@ -51,27 +49,25 @@ const Welcome = () => {
     getRandomImage();
   };
   return (
-    <div className={styles.welcomeRoot}>
+    <div>
       <Container>
         <ImageContainer>
-          <div className={styles.caption}>
-            <StyledP className="caption">
-              <label>Image Approval Application</label>
-            </StyledP>
-          </div>
+          <StyledP paddingLeft={30}>
+            <label>Image Approval Application</label>
+          </StyledP>
           <Space top={15} />
 
           <hr />
 
-          <div className={styles.approvedImages}>
+          <ApprovedImagesSection>
             <StyledP>
               <label>Approved Images ({images?.approvedImages.length})</label>
             </StyledP>
 
             <ApprovedImages approvedImages={images?.approvedImages} />
-          </div>
+          </ApprovedImagesSection>
 
-          <div className={styles.bottomSection}>
+          <BottomSection>
             <hr />
             <Space top={25} />
             <ImagePreview
@@ -86,24 +82,24 @@ const Welcome = () => {
             <Space top={40} />
 
             {!randomImage?.urls?.regular && (
-              <div className={styles.welcomeEmpty}>
+              <WelcomeEmpty>
                 <label data-testid="welcomeEmpty">
                   Click on the <PlusIcon size="1x" /> in order to get image recommendations
                 </label>
-              </div>
+              </WelcomeEmpty>
             )}
             {randomImage?.urls?.regular && (
-              <div className={styles.welcomeActions}>
+              <WelcomeActions>
                 <div>
                   <CustomButton testId="rejectButton" onClick={handleCancel} state={"cancel"} />
                 </div>
                 <div>
                   <CustomButton testId="approveButton" onClick={handleApprove} state={"okay"} />
                 </div>
-              </div>
+              </WelcomeActions>
             )}
             <Space top={25} />
-          </div>
+          </BottomSection>
         </ImageContainer>
       </Container>
     </div>

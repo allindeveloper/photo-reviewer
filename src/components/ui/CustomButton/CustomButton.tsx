@@ -27,6 +27,10 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
   img {
     width: 10%;
   }
+  @media (max-width: 450px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 `;
 export const CustomButton: React.FC<ICustomButtonProps> = ({
   testId = "customButton",

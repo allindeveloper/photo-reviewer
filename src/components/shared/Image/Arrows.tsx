@@ -29,6 +29,7 @@ export const LeftArrow = () => {
             alignSelf: "center",
             userSelect: "none",
           }}
+          data-testid="leftArrow"
           size={"2x"}
           color={appTheme.pallete.primary.main}
           onClick={() => scrollPrev()}
