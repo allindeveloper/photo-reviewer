@@ -10,6 +10,9 @@ const StyledContainer = styled.div`
   @media ${device.desktop} {
     max-width: 1400px;
   }
+  @media ${device.mobileS} {
+    padding: 30px 20px 30px 20px;
+  }
   margin: 0 auto;
   display: flex;
   flex-grow: 1;

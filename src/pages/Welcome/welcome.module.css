@@ -5,7 +5,7 @@
 .welcomeActions {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  height: "100%";
 }
 .bottomSection {
   padding: 10px 30px;
