@@ -28,10 +28,19 @@ const StyledCustomButton = styled.div<ICustomButtonProps>`
     width: 10%;
   }
 `;
-export const CustomButton: React.FC<ICustomButtonProps> = ({ testId, state = "cancel", disabled, onClick }) => {
+export const CustomButton: React.FC<ICustomButtonProps> = ({
+  testId = "customButton",
+  state = "cancel",
+  disabled,
+  onClick,
+}) => {
   return (
     <StyledCustomButton data-testid={testId} state={state} disabled={disabled} onClick={onClick}>
-      {state === "cancel" ? <CustomIcon icon={faTimes} size="2x" /> : <CustomIcon size="2x" icon={faCheck} />}
+      {state === "cancel" ? (
+        <CustomIcon testid="cancelButtonIcon" icon={faTimes} size="2x" />
+      ) : (
+        <CustomIcon testid="checkButtonIcon" size="2x" icon={faCheck} />
+      )}
     </StyledCustomButton>
   );
 };
