@@ -2,7 +2,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import PreLoader from "../../ui/Loader/PreLoader";
+import Spinner from "../../ui/Loader/Spinner";
 const StyledImagePreview = styled.div`
   background-color: ${props => props.theme.pallete.common.offwhite};
   height: 450px;
@@ -40,7 +40,7 @@ const ImagePreview = ({ testId, isLoading, getRandomImage, imageUrl, description
     <StyledImagePreview data-testid={testId} onClick={getRandomImage}>
       {isLoading && (
         <div data-testid={"imagePreloader"}>
-          <PreLoader />
+          <Spinner />
         </div>
       )}
       {!isLoading && imageUrl && imageUrl && (
